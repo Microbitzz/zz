@@ -19,6 +19,7 @@ input.onButtonPressed(Button.B, function () {
 input.onSound(DetectedSound.Loud, function () {
     basic.showIcon(IconNames.Heart)
     robotbit.rgb().showColor(neopixel.rgb(30, 30, 30))
+    music.ringTone(247)
     basic.pause(1000)
     basic.showIcon(IconNames.SmallHeart)
     robotbit.rgb().showColor(neopixel.rgb(2, 30, 2))
