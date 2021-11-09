@@ -1,0 +1,28 @@
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    robotbit.MotorStopAll()
+    basic.showIcon(IconNames.Happy)
+})
+input.onButtonPressed(Button.A, function () {
+    robotbit.MotorRun(robotbit.Motors.M1A, 255)
+    robotbit.MotorRun(robotbit.Motors.M1B, 255)
+    robotbit.MotorRun(robotbit.Motors.M2A, 255)
+    robotbit.MotorRun(robotbit.Motors.M2B, 255)
+    robotbit.rgb().showColor(neopixel.rgb(30, 2, 2))
+})
+input.onButtonPressed(Button.B, function () {
+    robotbit.MotorRun(robotbit.Motors.M1A, -255)
+    robotbit.MotorRun(robotbit.Motors.M1B, -255)
+    robotbit.MotorRun(robotbit.Motors.M2A, -255)
+    robotbit.MotorRun(robotbit.Motors.M2B, -255)
+    robotbit.rgb().showColor(neopixel.rgb(2, 2, 30))
+})
+input.onSound(DetectedSound.Loud, function () {
+    basic.showIcon(IconNames.Heart)
+    robotbit.rgb().showColor(neopixel.rgb(30, 30, 30))
+    basic.pause(1000)
+    basic.showIcon(IconNames.SmallHeart)
+    robotbit.rgb().showColor(neopixel.rgb(2, 30, 2))
+})
+radio.setGroup(0)
+input.setSoundThreshold(SoundThreshold.Loud, 150)
+basic.showNumber(0)
